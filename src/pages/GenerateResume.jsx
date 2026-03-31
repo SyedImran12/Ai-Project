@@ -12,25 +12,25 @@ function GenerateResume() {
   const [resumeData, setResumeData] = useState(null);
 
   const normalizeResume = (data) => ({
-  personalInformation: {
-    fullName: data?.personalInformation?.fullName || "",
-    email: data?.personalInformation?.email || "",
-    phoneNumber: data?.personalInformation?.phoneNumber || "",
-    location: data?.personalInformation?.location || "",
-    linkedIn: data?.personalInformation?.linkedIn || "",
-    gitHub: data?.personalInformation?.gitHub || "",
-    portfolio: data?.personalInformation?.portfolio || "",
-  },
-  summary: data?.summary || "",
-  skills: data?.skills || [],
-  experience: data?.experience || [],
-  education: data?.education || [],
-  certifications: data?.certifications || [],
-  projects: data?.projects || [],
-  achievements: data?.achievements || [],
-  languages: data?.languages || [],
-  interests: data?.interests || [],
-});
+    personalInformation: {
+      fullName: data?.personalInformation?.fullName || "",
+      email: data?.personalInformation?.email || "",
+      phoneNumber: data?.personalInformation?.phoneNumber || "",
+      location: data?.personalInformation?.location || "",
+      linkedIn: data?.personalInformation?.linkedIn || "",
+      gitHub: data?.personalInformation?.gitHub || "",
+      portfolio: data?.personalInformation?.portfolio || "",
+    },
+    summary: data?.summary || "",
+    skills: data?.skills || [],
+    experience: data?.experience || [],
+    education: data?.education || [],
+    certifications: data?.certifications || [],
+    projects: data?.projects || [],
+    achievements: data?.achievements || [],
+    languages: data?.languages || [],
+    interests: data?.interests || [],
+  });
 
   const handleGenerate = async () => {
     if (!userDescription || userDescription.trim().length < 50) {
@@ -150,18 +150,18 @@ function GenerateResume() {
   return (
     <div className="min-h-screen flex flex-col gap-3 items-center justify-center bg-base-200 px-4">
 
-    {/* Step 1: Input */}
-    {!resumeData && ShowInputField()}
+      {/* Step 1: Input */}
+      {!resumeData && ShowInputField()}
 
-    {/* Step 2: Form */}
-    {resumeData && (
-      <PersonalInfoForm
-        resumeData={resumeData}
-        setResumeData={setResumeData}
-      />
-    )}
+      {/* Step 2: Form */}
+      {resumeData && (
+        <PersonalInfoForm
+          resumeData={resumeData}
+          setResumeData={setResumeData}
+        />
+      )}
 
-  </div>
+    </div>
   );
 }
 

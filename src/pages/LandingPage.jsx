@@ -88,22 +88,12 @@ function LandingPage() {
       <h2 className="text-3xl font-bold">
         Start Building Your Resume Today
       </h2>
-      <Link to="/generate-resume" className="btn btn-secondary mt-6">
+      <Link to="/resume-page" className="btn btn-secondary mt-6">
         Get Started Free
       </Link>
     </section>
 
-{/* Footer Section */}
-{/* <footer className="footer p-10 bg-base-200 text-base-content">
-      <nav>
-        <h6 className="footer-title">Product</h6>
-        <a className="link link-hover">Features</a>
-      </nav>
-      <nav>
-        <h6 className="footer-title">Company</h6>
-        <a className="link link-hover">About</a>
-      </nav>
-    </footer> */}
+
     </>
   )
 }

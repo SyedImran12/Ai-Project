@@ -2,3 +2,22 @@
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark, cupcake;
 }
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .navbar,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  #resume-preview {
+    margin: 0;
+    min-height: auto;
+    width: 100%;
+    max-width: none;
+    box-shadow: none;
+  }
+}

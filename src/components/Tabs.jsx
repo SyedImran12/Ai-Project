@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Resume() {
+function Tabs() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function Resume() {
   )
 }
 
-export default Resume
+export default Tabs

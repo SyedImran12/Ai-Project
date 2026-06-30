@@ -2,16 +2,16 @@ import axios from "axios";
 
 const API_URL = "http://localhost:8081/api/v1/resume"; //http://localhost:8081/api/v1/resume/generate
 
-export const generateResume = async (userDescription) => {
+export const generateResume = async ({ userDescription, jobDescription, template }) => {
   try {
     const response = await axios.post(
       `${API_URL}/generate`,
-      { userDescription },
+      { userDescription, jobDescription, template },
       {
         headers: {
           "Content-Type": "application/json",
         },
-        timeout: 120000,
+        timeout: 300000,
       }
     );
 
@@ -21,7 +21,7 @@ export const generateResume = async (userDescription) => {
     if (error.response) {
       throw new Error(error.response.data?.message || "Server error");
     } else if (error.request) {
-      throw new Error("No response from server");
+      throw new Error("The AI model is taking too long to respond. Please warm up Ollama and try again.");
     } else {
       throw new Error("Request failed");
     }
